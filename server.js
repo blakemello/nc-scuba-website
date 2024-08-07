@@ -5,6 +5,7 @@ require('dotenv').config()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const { expressjwt } = require("express-jwt")
+const path = require('path')
 
 // for using dotenv file
 process.env.SECRET
@@ -12,6 +13,7 @@ process.env.SECRET
 // Middleware
 app.use(express.json())
 app.use(morgan('dev'))
+app.use(express.static(path.join(__dirname, 'client', 'dist')))
 
 // Connect to Database
 async function connectToDb(){
@@ -40,6 +42,7 @@ app.use((err, req, res, next) => {
     return res.send({errMsg: err.message})
 })
 
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html')))
 
 app.listen(process.env.PORT, () => {
     console.log(`The server is running on Port ${process.env.PORT}, Hell yeah`)
