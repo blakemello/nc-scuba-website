@@ -6,8 +6,8 @@
   color-scheme: light dark;
   color: #1a1a1a;
   /*color: rgba(255, 255, 255, 0.87);*/
-  /* background: linear-gradient(90deg, #242424 1.18%, #328ea3 100%); */
-  background-color: #ffffff; 
+  background: linear-gradient(90deg, #ffffff 1.18%, #328ea3 100%);
+  /* background-color: #ffffff;  */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -57,9 +57,16 @@ textarea {
 
 nav a {
   font-size: 16px;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
 }
 
 /* Dropdown Button */

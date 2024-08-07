@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-    <div>
+    <div className='navbar'>
         <Link to="/" style={{padding: 5}}> 
           Home
         </Link>
